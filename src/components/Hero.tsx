@@ -10,8 +10,11 @@ const Hero = () => {
   return (
     <section 
       id="hero" 
-      className="min-h-screen flex items-center pt-20 relative bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${heroBackground})` }}
+      className="min-h-screen flex items-center pt-20 relative bg-cover bg-no-repeat"
+      style={{ 
+        backgroundImage: `url(${heroBackground})`,
+        backgroundPosition: 'center 60%'
+      }}
     >
       {/* Overlay escuro para garantir legibilidade */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60"></div>
