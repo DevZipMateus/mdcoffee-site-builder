@@ -47,11 +47,11 @@ const Gallery = () => {
   );
 
   return (
-    <section id="gallery" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Galeria</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+    <section id="gallery" className="py-12 sm:py-16 lg:py-20 bg-muted/30">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">Galeria</h2>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Confira alguns dos nossos trabalhos e equipamentos
           </p>
         </div>
@@ -64,27 +64,28 @@ const Gallery = () => {
           plugins={[plugin.current]}
           className="w-full max-w-6xl mx-auto"
         >
-          <CarouselContent>
+          <CarouselContent className="-ml-2 sm:-ml-4">
             {images.map((image, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
+              <CarouselItem key={index} className="pl-2 sm:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                <div className="p-1 sm:p-1">
                   <Dialog>
                     <DialogTrigger asChild>
                       <Card className="cursor-pointer hover:shadow-lg transition-shadow">
-                        <CardContent className="flex aspect-square items-center justify-center p-0 overflow-hidden">
+                        <CardContent className="flex aspect-square items-center justify-center p-0 overflow-hidden rounded-lg">
                           <img
                             src={image}
                             alt={`Galeria imagem ${index + 1}`}
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
                           />
                         </CardContent>
                       </Card>
                     </DialogTrigger>
-                    <DialogContent className="max-w-4xl w-full p-0 border-0">
+                    <DialogContent className="max-w-[95vw] sm:max-w-4xl w-full p-2 sm:p-4 border-0">
                       <img
                         src={image}
                         alt={`Galeria imagem ${index + 1} expandida`}
-                        className="w-full h-auto"
+                        className="w-full h-auto rounded-lg"
                       />
                     </DialogContent>
                   </Dialog>
@@ -92,8 +93,8 @@ const Gallery = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="hidden sm:flex -left-12 lg:-left-16" />
+          <CarouselNext className="hidden sm:flex -right-12 lg:-right-16" />
         </Carousel>
       </div>
     </section>
