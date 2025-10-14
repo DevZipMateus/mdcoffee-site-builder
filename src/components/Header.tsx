@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-background/80 backdrop-blur-sm"
+        isScrolled ? "bg-primary shadow-md" : "bg-primary/95"
       }`}
     >
       <nav className="container mx-auto px-4 h-20 flex items-center justify-between">
@@ -53,14 +53,15 @@ const Header = () => {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              className="text-white hover:text-white/80 transition-colors font-medium"
             >
               {item.label}
             </button>
           ))}
           <Button
-            variant="default"
+            variant="secondary"
             onClick={() => scrollToSection("contact")}
+            className="bg-white text-primary hover:bg-white/90"
           >
             Fale conosco
           </Button>
@@ -68,7 +69,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-foreground"
+          className="md:hidden text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Menu"
         >
@@ -78,21 +79,21 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background border-t border-border">
+        <div className="md:hidden bg-primary border-t border-white/20">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-foreground hover:text-primary transition-colors font-medium text-left py-2"
+                className="text-white hover:text-white/80 transition-colors font-medium text-left py-2"
               >
                 {item.label}
               </button>
             ))}
             <Button
-              variant="default"
+              variant="secondary"
               onClick={() => scrollToSection("contact")}
-              className="w-full"
+              className="w-full bg-white text-primary hover:bg-white/90"
             >
               Fale conosco
             </Button>
