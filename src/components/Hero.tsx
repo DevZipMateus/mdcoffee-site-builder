@@ -13,7 +13,7 @@ const Hero = () => {
       className="min-h-screen flex items-center pt-20 relative bg-cover bg-no-repeat"
       style={{ 
         backgroundImage: `url(${heroBackground})`,
-        backgroundPosition: 'center 40%'
+        backgroundPosition: 'center 30%'
       }}
     >
       {/* Overlay escuro para garantir legibilidade */}
