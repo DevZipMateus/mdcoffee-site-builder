@@ -1,21 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Coffee, Wrench, Award } from "lucide-react";
 import heroBackground from "@/assets/hero-bg.jpg";
-
 const Hero = () => {
   const handleWhatsAppClick = () => {
     window.open("https://wa.me/5535988596255", "_blank");
   };
-
-  return (
-    <section 
-      id="hero" 
-      className="min-h-screen flex items-center pt-20 relative bg-cover bg-no-repeat"
-      style={{ 
-        backgroundImage: `url(${heroBackground})`,
-        backgroundPosition: 'center 30%'
-      }}
-    >
+  return <section id="hero" className="min-h-screen flex items-center pt-20 relative bg-cover bg-no-repeat" style={{
+    backgroundImage: `url(${heroBackground})`,
+    backgroundPosition: 'center 30%'
+  }}>
       {/* Overlay escuro para garantir legibilidade */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60"></div>
       
@@ -32,19 +25,12 @@ const Hero = () => {
               Para melhor extração do seu café espresso e manutenção do seu equipamento
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button
-                size="lg"
-                onClick={handleWhatsAppClick}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
-              >
+              <Button size="lg" onClick={handleWhatsAppClick} className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
                 Fale conosco
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
-                className="border-white/60 text-white hover:bg-white/20 hover:border-white"
-              >
+              <Button size="lg" variant="outline" onClick={() => document.getElementById("services")?.scrollIntoView({
+              behavior: "smooth"
+            })} className="border-white/60 text-white hover:border-white bg-stone-950 hover:bg-stone-800">
                 Nossos serviços
               </Button>
             </div>
@@ -75,8 +61,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
