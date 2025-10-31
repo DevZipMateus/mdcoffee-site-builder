@@ -42,26 +42,27 @@ const Header = () => {
         isScrolled ? "bg-primary shadow-md" : "bg-primary/95"
       }`}
     >
-      <nav className="container mx-auto px-4 h-20 flex items-center justify-between">
+      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="MD Coffee Machines" className="h-12 w-auto" />
+          <img src={logo} alt="MD Coffee Machines" className="h-10 sm:h-12 w-auto" />
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-4 lg:gap-8">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-white hover:text-white/80 transition-colors font-medium"
+              className="text-white hover:text-white/80 transition-colors font-medium text-sm lg:text-base"
             >
               {item.label}
             </button>
           ))}
           <Button
             variant="secondary"
+            size="sm"
             onClick={() => scrollToSection("contact")}
-            className="bg-white text-primary hover:bg-white/90"
+            className="bg-white text-primary hover:bg-white/90 lg:h-10 lg:px-4"
           >
             Fale conosco
           </Button>
